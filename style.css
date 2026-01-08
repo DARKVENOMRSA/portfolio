@@ -1,16 +1,16 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #f5f9ff, #eef4ff);
+  font-family: Arial, sans-serif;
+  background: #f4f8ff;
   color: #0a2540;
 }
 
-.container {
+.page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,11 +24,9 @@ body {
   background: #ffffff;
   width: 100%;
   max-width: 420px;
-  padding: 32px 28px;
-  border-radius: 28px;
-  box-shadow:
-    0 10px 25px rgba(31, 111, 235, 0.15),
-    0 30px 60px rgba(10, 37, 64, 0.12);
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(31, 111, 235, 0.2);
   text-align: center;
 }
 
@@ -36,7 +34,7 @@ body {
 .avatar {
   width: 110px;
   height: 110px;
-  margin: 0 auto 16px;
+  margin: 0 auto 15px;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, #1f6feb, #4ea1ff);
@@ -47,21 +45,72 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  background: #ffffff;
 }
 
 /* TEXT */
 h1 {
-  font-size: 1.7rem;
   color: #1f6feb;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .subtitle {
-  margin-bottom: 20px;
   color: #5b6b7a;
+  margin-bottom: 15px;
+}
+
+.about {
+  margin: 15px 0;
   font-size: 0.95rem;
 }
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.skills span {
+  background: #e8f0ff;
+  color: #1f6feb;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* CONTACT */
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1f6feb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #5b6b7a;
+}}
 
 .info p {
   margin-bottom: 10px;
