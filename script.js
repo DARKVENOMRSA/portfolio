@@ -1,25 +1,14 @@
-// Disable right click
-document.addEventListener("contextmenu", e => e.preventDefault());
+// Scroll reveal animation
 
-// Dark mode
-const toggle = document.getElementById("themeToggle");
-
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-  });
-}
-
-// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
-  reveals.forEach(section => {
+  reveals.forEach(el => {
     const windowHeight = window.innerHeight;
-    const elementTop = section.getBoundingClientRect().top;
+    const elementTop = el.getBoundingClientRect().top;
 
     if (elementTop < windowHeight - 50) {
-      section.classList.add("active");
+      el.classList.add("active");
     }
   });
 }
@@ -35,6 +24,17 @@ const personalCount = document.getElementById("personalCount");
 if (personalMsg) {
   personalMsg.addEventListener("input", () => {
     personalCount.textContent = personalMsg.value.length;
+  });
+}
+
+const projectMsg = document.getElementById("projectMessage");
+const projectCount = document.getElementById("projectCount");
+
+if (projectMsg) {
+  projectMsg.addEventListener("input", () => {
+    projectCount.textContent = projectMsg.value.length;
+  });
+}    personalCount.textContent = personalMsg.value.length;
   });
 }
 
