@@ -2,80 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DARKVENOMRSA</title>
+  <title>DARKVENOMRSA Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Telegram & WhatsApp icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="page">
+<!-- HERO -->
+<section class="hero">
 
-    <!-- MAIN CARD -->
-    <div class="card">
+  <img src="profile.jpg" class="avatar">
 
-      <!-- PROFILE PHOTO -->
-      <div class="avatar">
-        <img src="profile.jpg" alt="DARKVENOMRSA">
-      </div>
+  <h1>DARKVENOMRSA</h1>
+  <p class="subtitle">Developer • Security Research • Systems Enthusiast</p>
 
-      <!-- NAME -->
-      <h1>DARKVENOMRSA</h1>
+</section>
 
-      <!-- SUBTITLE -->
-      <p class="subtitle">Creator · Hacker · Programmer</p>
+<!-- ABOUT -->
+<section class="about">
 
-      <!-- ABOUT -->
-      <p><strong>Nationality:</strong> South Africa</p>
+  <h2>About Me</h2>
 
-      <p class="about">
-        I am focused on learning how systems work, improving my skills,
-        and building experience through practice and experimentation.
-      </p>
+  <p>
+    I focus on understanding systems, improving technical skills,
+    and building real-world solutions using modern tools and clean design.
+  </p>
 
-      <!-- SKILLS TITLE -->
-      <h2 class="section-title">Skills</h2>
+</section>
 
-      <!-- SKILLS LIST -->
-      <div class="skills">
-        <span>Developer</span>
-        <span>Coder</span>
-        <span>Editor</span>
-        <span>Hacker</span>
-        <span>Tunneler</span>
-        <span>Modder</span>
-        <span>Carder</span>
-      </div>
+<!-- SKILLS -->
+<section class="skills-section">
 
-      <!-- CONTACT -->
-      <div class="contact">
-        <a href="https://t.me/D_A_R_K_V_E_N_O_M" target="_blank" aria-label="Telegram">
-          <i class="fa-brands fa-telegram"></i>
-        </a>
+<h2>Skills</h2>
 
-        <a href="https://wa.me/27720402551" target="_blank" class="whatsapp" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </div>
+<div class="skills-grid">
 
-    </div>
-
-    <!-- FOOTER WITH WARNING -->
-    <footer>
-      <p>© 2026 DARKVENOMRSA · All rights reserved.</p>
-      <p>
-        All content, design, and materials on this website are the exclusive property
-        of DARKVENOMRSA. Unauthorized use or distribution is strictly prohibited.
-      </p>
-    </footer>
-
+  <div class="skill-card">
+    <h4>Development</h4>
+    <p>Web apps and UI logic</p>
   </div>
+
+  <div class="skill-card">
+    <h4>Programming</h4>
+    <p>Automation and scripting</p>
+  </div>
+
+  <div class="skill-card">
+    <h4>Networking</h4>
+    <p>Traffic routing and tunneling</p>
+  </div>
+
+  <div class="skill-card">
+    <h4>Security Research</h4>
+    <p>Testing and learning systems</p>
+  </div>
+
+  <div class="skill-card">
+    <h4>Modding</h4>
+    <p>Customization and tweaks</p>
+  </div>
+
+  <div class="skill-card">
+    <h4>Editing</h4>
+    <p>Design improvements</p>
+  </div>
+
+</div>
+
+</section>
+
+<!-- PROJECT REQUEST FORM -->
+<section class="request">
+
+<h2>Request a Project</h2>
+
+<p class="request-text">
+Have something you want built? Send your request below.
+</p>
+
+<form
+  class="request-form"
+  name="project-request"
+  method="POST"
+  data-netlify="true"
+  action="/thank-you.html"
+>
+
+<input type="hidden" name="form-name" value="project-request">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="text" name="title" placeholder="Project Title" required>
+
+<textarea name="message" placeholder="Describe what you want me to build..." required></textarea>
+
+<div data-netlify-recaptcha="true"></div>
+
+<button type="submit">Send Request</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 DARKVENOMRSA — All rights reserved.
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
