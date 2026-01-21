@@ -5,9 +5,6 @@
 <title>DARKVENOMRSA | Portfolio</title>
 
 <meta name="description" content="DARKVENOMRSA Portfolio - Developer, Security Researcher, Systems Enthusiast">
-<meta name="keywords" content="portfolio, developer, security, programming, networking">
-<meta name="author" content="DARKVENOMRSA">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
@@ -15,20 +12,15 @@
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="spinner"></div>
-</div>
-
 <!-- NAVBAR -->
 <nav class="navbar">
   <a href="index.html" class="logo">DARKVENOMRSA</a>
 
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#about" class="nav-item">About</a>
+    <a href="#skills" class="nav-item">Skills</a>
+    <a href="#projects" class="nav-item">Projects</a>
+    <a href="#contact" class="nav-item">Contact</a>
     <a href="request.html">Request Project</a>
   </div>
 
@@ -36,20 +28,17 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
 
 <img src="profile.jpg" class="avatar" alt="Profile">
 
 <h1>DARKVENOMRSA</h1>
-
-<p class="subtitle">
-Developer • Security Research • Systems Enthusiast
-</p>
+<p class="subtitle">Developer • Security Research • Systems Enthusiast</p>
 
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about">
+<section id="about" class="about reveal">
 
 <h2>About Me</h2>
 
@@ -61,48 +50,25 @@ and building clean, practical solutions using modern technologies.
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="skills-section">
+<section id="skills" class="skills-section reveal">
 
 <h2>Skills</h2>
 
 <div class="skills-grid">
 
-<div class="skill-card">
-<h4>Development</h4>
-<p>Web apps and UI systems</p>
-</div>
-
-<div class="skill-card">
-<h4>Programming</h4>
-<p>Automation and scripting</p>
-</div>
-
-<div class="skill-card">
-<h4>Networking</h4>
-<p>Traffic routing and tunneling</p>
-</div>
-
-<div class="skill-card">
-<h4>Security Research</h4>
-<p>Testing and learning systems</p>
-</div>
-
-<div class="skill-card">
-<h4>Modding</h4>
-<p>Customization and tweaks</p>
-</div>
-
-<div class="skill-card">
-<h4>Editing</h4>
-<p>Design improvements</p>
-</div>
+<div class="skill-card"><h4>Development</h4><p>Web apps and UI systems</p></div>
+<div class="skill-card"><h4>Programming</h4><p>Automation and scripting</p></div>
+<div class="skill-card"><h4>Networking</h4><p>Traffic routing</p></div>
+<div class="skill-card"><h4>Security Research</h4><p>Testing systems</p></div>
+<div class="skill-card"><h4>Modding</h4><p>Customization</p></div>
+<div class="skill-card"><h4>Editing</h4><p>Design improvements</p></div>
 
 </div>
 
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects">
+<section id="projects" class="projects reveal">
 
 <h2>Projects</h2>
 
@@ -110,12 +76,12 @@ and building clean, practical solutions using modern technologies.
 
 <div class="project-card">
 <h4>Portfolio Website</h4>
-<p>Personal responsive portfolio.</p>
+<p>Responsive personal portfolio.</p>
 </div>
 
 <div class="project-card">
 <h4>Automation Tool</h4>
-<p>Automation scripts and tools.</p>
+<p>Script automation utilities.</p>
 </div>
 
 <div class="project-card">
@@ -128,50 +94,59 @@ and building clean, practical solutions using modern technologies.
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" class="contact reveal">
 
 <h2>Contact Me</h2>
 
 <p class="contact-text">
-Send me a personal message or question.
+Send me a direct message or contact me instantly:
 </p>
 
+<!-- DIRECT CONTACT BUTTONS -->
+
+<div class="direct-contact">
+
+<a href="https://wa.me/REPLACE_WITH_YOUR_NUMBER" target="_blank" class="whatsapp-btn">
+WhatsApp
+</a>
+
+<a href="https://t.me/REPLACE_WITH_YOUR_USERNAME" target="_blank" class="telegram-btn">
+Telegram
+</a>
+
+</div>
+
+<!-- PERSONAL MESSAGE FORM -->
+
 <form
-  id="personalForm"
-  class="contact-form"
-  name="personal-message"
-  method="POST"
-  data-netlify="true"
-  action="/thank-you.html"
+class="contact-form"
+name="personal-message"
+method="POST"
+data-netlify="true"
+action="/thank-you.html"
 >
 
 <input type="hidden" name="form-name" value="personal-message">
 
 <select name="category" required>
-  <option value="">Select Message Type</option>
-  <option value="Question">Question</option>
-  <option value="Feedback">Feedback</option>
-  <option value="Bug Report">Bug Report</option>
-  <option value="Other">Other</option>
+<option value="">Message Type</option>
+<option value="Question">Question</option>
+<option value="Feedback">Feedback</option>
+<option value="Bug">Bug Report</option>
+<option value="Other">Other</option>
 </select>
 
-<input
-  type="text"
-  name="username"
-  placeholder="Your Username"
-  required
->
+<input type="text" name="username" placeholder="Your Username" required>
 
 <textarea
-  id="personalMessage"
-  name="message"
-  placeholder="Write your message..."
-  maxlength="300"
-  required
-></textarea>
+id="personalMessage"
+name="message"
+maxlength="300"
+placeholder="Write your message..."
+required></textarea>
 
 <div class="char-count">
-  <span id="personalCount">0</span>/300
+<span id="personalCount">0</span>/300
 </div>
 
 <div data-netlify-recaptcha="true"></div>
@@ -182,7 +157,7 @@ Send me a personal message or question.
 
 </section>
 
-<!-- FLOAT CONTACT BUTTON -->
+<!-- FLOAT BUTTON -->
 <a href="#contact" class="float-contact">💬</a>
 
 <!-- FOOTER -->
