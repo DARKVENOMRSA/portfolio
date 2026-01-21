@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Request Project</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">DARKVENOMRSA</a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="request.html">Request Project</a>
+  </div>
+
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<section class="request">
+
+<h2>Request A Project</h2>
+
+<p class="request-text">
+Tell me what you want me to build or fix.
+</p>
+
+<form
+  id="requestForm"
+  class="request-form"
+  name="project-request"
+  method="POST"
+  data-netlify="true"
+  action="/thank-you.html"
+>
+
+<input type="hidden" name="form-name" value="project-request">
+
+<select name="type" required>
+  <option value="">Select Request Type</option>
+  <option value="Website">Website</option>
+  <option value="Tool">Tool</option>
+  <option value="Fix Bug">Fix Bug</option>
+  <option value="Custom Project">Custom Project</option>
+</select>
+
+<input
+  type="text"
+  name="username"
+  placeholder="Your Nickname / Username"
+  required
+>
+
+<textarea
+  id="projectMessage"
+  name="project"
+  placeholder="Describe what you want..."
+  maxlength="500"
+  required
+></textarea>
+
+<div class="char-count">
+  <span id="projectCount">0</span>/500
+</div>
+
+<div data-netlify-recaptcha="true"></div>
+
+<button type="submit">Send Request</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 DARKVENOMRSA — All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
