@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Request Project</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
@@ -22,50 +21,39 @@
   <button id="themeToggle">🌙</button>
 </nav>
 
-<section class="request">
+<section class="request reveal">
 
 <h2>Request A Project</h2>
 
-<p class="request-text">
-Tell me what you want me to build or fix.
-</p>
-
 <form
-  id="requestForm"
-  class="request-form"
-  name="project-request"
-  method="POST"
-  data-netlify="true"
-  action="/thank-you.html"
+class="request-form"
+name="project-request"
+method="POST"
+data-netlify="true"
+action="/thank-you.html"
 >
 
 <input type="hidden" name="form-name" value="project-request">
 
 <select name="type" required>
-  <option value="">Select Request Type</option>
-  <option value="Website">Website</option>
-  <option value="Tool">Tool</option>
-  <option value="Fix Bug">Fix Bug</option>
-  <option value="Custom Project">Custom Project</option>
+<option value="">Project Type</option>
+<option value="Website">Website</option>
+<option value="Tool">Tool</option>
+<option value="Fix">Bug Fix</option>
+<option value="Custom">Custom Project</option>
 </select>
 
-<input
-  type="text"
-  name="username"
-  placeholder="Your Nickname / Username"
-  required
->
+<input type="text" name="username" placeholder="Your Username" required>
 
 <textarea
-  id="projectMessage"
-  name="project"
-  placeholder="Describe what you want..."
-  maxlength="500"
-  required
-></textarea>
+id="projectMessage"
+name="project"
+maxlength="500"
+placeholder="Describe what you want..."
+required></textarea>
 
 <div class="char-count">
-  <span id="projectCount">0</span>/500
+<span id="projectCount">0</span>/500
 </div>
 
 <div data-netlify-recaptcha="true"></div>
