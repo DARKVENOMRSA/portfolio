@@ -4,33 +4,30 @@
 <meta charset="UTF-8">
 <title>DARKVENOMRSA | Portfolio</title>
 
-<meta name="description" content="DARKVENOMRSA Portfolio - Developer, Security Researcher, Systems Enthusiast">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DARKVENOMRSA Developer Portfolio">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="logo">DARKVENOMRSA</a>
+  <a class="logo" href="#">DARKVENOMRSA</a>
 
   <div class="nav-links">
     <a href="#about" class="nav-item">About</a>
     <a href="#skills" class="nav-item">Skills</a>
     <a href="#projects" class="nav-item">Projects</a>
     <a href="#contact" class="nav-item">Contact</a>
-    <a href="request.html">Request Project</a>
+    <a href="request.html">Request</a>
   </div>
-
-  <button id="themeToggle">🌙</button>
 </nav>
 
 <!-- HERO -->
 <section class="hero reveal">
 
-<img src="profile.jpg" class="avatar" alt="Profile">
+<img src="profile.jpg" class="avatar">
 
 <h1>DARKVENOMRSA</h1>
 <p class="subtitle">Developer • Security Research • Systems Enthusiast</p>
@@ -38,37 +35,37 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about reveal">
+<section id="about" class="reveal">
 
 <h2>About Me</h2>
 
 <p>
-I focus on learning how systems work, improving my technical skills,
-and building clean, practical solutions using modern technologies.
+I focus on learning how systems work, improving my technical skills, and building clean,
+practical solutions using modern technologies.
 </p>
 
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="skills-section reveal">
+<section id="skills" class="reveal">
 
 <h2>Skills</h2>
 
 <div class="skills-grid">
 
-<div class="skill-card"><h4>Development</h4><p>Web apps and UI systems</p></div>
-<div class="skill-card"><h4>Programming</h4><p>Automation and scripting</p></div>
-<div class="skill-card"><h4>Networking</h4><p>Traffic routing</p></div>
-<div class="skill-card"><h4>Security Research</h4><p>Testing systems</p></div>
-<div class="skill-card"><h4>Modding</h4><p>Customization</p></div>
-<div class="skill-card"><h4>Editing</h4><p>Design improvements</p></div>
+<div class="skill-card">Web Development</div>
+<div class="skill-card">Programming</div>
+<div class="skill-card">Networking</div>
+<div class="skill-card">Security Research</div>
+<div class="skill-card">Automation</div>
+<div class="skill-card">UI Design</div>
 
 </div>
 
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects reveal">
+<section id="projects" class="reveal">
 
 <h2>Projects</h2>
 
@@ -76,17 +73,17 @@ and building clean, practical solutions using modern technologies.
 
 <div class="project-card">
 <h4>Portfolio Website</h4>
-<p>Responsive personal portfolio.</p>
+<p>Modern responsive personal website.</p>
 </div>
 
 <div class="project-card">
 <h4>Automation Tool</h4>
-<p>Script automation utilities.</p>
+<p>System task automation scripts.</p>
 </div>
 
 <div class="project-card">
 <h4>Networking Lab</h4>
-<p>Testing tunneling concepts.</p>
+<p>Routing and tunneling testing.</p>
 </div>
 
 </div>
@@ -94,29 +91,17 @@ and building clean, practical solutions using modern technologies.
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact reveal">
+<section id="contact" class="reveal">
 
 <h2>Contact Me</h2>
 
-<p class="contact-text">
-Send me a direct message or contact me instantly:
-</p>
-
-<!-- DIRECT CONTACT BUTTONS -->
-
 <div class="direct-contact">
 
-<a href="https://wa.me/REPLACE_WITH_YOUR_NUMBER" target="_blank" class="whatsapp-btn">
-WhatsApp
-</a>
+<a class="whatsapp-btn" href="https://wa.me/YOURNUMBER" target="_blank">WhatsApp</a>
 
-<a href="https://t.me/REPLACE_WITH_YOUR_USERNAME" target="_blank" class="telegram-btn">
-Telegram
-</a>
+<a class="telegram-btn" href="https://t.me/YOURUSERNAME" target="_blank">Telegram</a>
 
 </div>
-
-<!-- PERSONAL MESSAGE FORM -->
 
 <form
 class="contact-form"
@@ -132,18 +117,12 @@ action="/thank-you.html"
 <option value="">Message Type</option>
 <option value="Question">Question</option>
 <option value="Feedback">Feedback</option>
-<option value="Bug">Bug Report</option>
-<option value="Other">Other</option>
+<option value="Bug">Bug</option>
 </select>
 
 <input type="text" name="username" placeholder="Your Username" required>
 
-<textarea
-id="personalMessage"
-name="message"
-maxlength="300"
-placeholder="Write your message..."
-required></textarea>
+<textarea id="personalMessage" name="message" maxlength="300" placeholder="Write message..." required></textarea>
 
 <div class="char-count">
 <span id="personalCount">0</span>/300
@@ -157,10 +136,8 @@ required></textarea>
 
 </section>
 
-<!-- FLOAT BUTTON -->
 <a href="#contact" class="float-contact">💬</a>
 
-<!-- FOOTER -->
 <footer>
 © 2026 DARKVENOMRSA — All rights reserved.
 </footer>
