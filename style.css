@@ -1,7 +1,6 @@
 :root {
   --bg-main:#0b1020;
   --bg-soft:#0f172a;
-  --card-bg:#121a2f;
   --accent:#38bdf8;
   --text-main:#e5e7eb;
   --text-muted:#94a3b8;
@@ -73,6 +72,7 @@ body {
 .hero {
   text-align: center;
   padding: 35px 15px 20px;
+  transform: translateY(0) !important;
 }
 
 .hero h1 {
@@ -97,6 +97,7 @@ body {
 
 section {
   padding: 20px;
+  min-height: auto;
 }
 
 h2 {
@@ -201,16 +202,14 @@ input, textarea, select {
   text-decoration: none;
 }
 
-/* REVEAL */
+/* SAFE REVEAL (NO BLANK SCREEN) */
 
 .reveal {
-  opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: transform 0.8s ease;
 }
 
 .reveal.active {
-  opacity: 1;
   transform: translateY(0);
 }
 
@@ -220,4 +219,4 @@ footer {
   text-align: center;
   padding: 15px;
   color: var(--text-muted);
-  }
+}
