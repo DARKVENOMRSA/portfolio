@@ -1,4 +1,4 @@
-// Scroll reveal animation
+// Scroll reveal FIXED
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -14,7 +14,10 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+
+window.addEventListener("load", () => {
+  revealOnScroll();
+});
 
 // Character counters
 
@@ -24,17 +27,6 @@ const personalCount = document.getElementById("personalCount");
 if (personalMsg) {
   personalMsg.addEventListener("input", () => {
     personalCount.textContent = personalMsg.value.length;
-  });
-}
-
-const projectMsg = document.getElementById("projectMessage");
-const projectCount = document.getElementById("projectCount");
-
-if (projectMsg) {
-  projectMsg.addEventListener("input", () => {
-    projectCount.textContent = projectMsg.value.length;
-  });
-}    personalCount.textContent = personalMsg.value.length;
   });
 }
 
