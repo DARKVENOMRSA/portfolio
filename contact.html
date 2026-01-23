@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Me</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Send Message</h2>
+
+<form name="contact-form" method="POST" data-netlify="true">
+
+<input type="hidden" name="form-name" value="contact-form">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<textarea name="message" placeholder="Your message" required></textarea>
+
+<div data-netlify-recaptcha="true"></div>
+
+<button type="submit">Send</button>
+
+</form>
+
+</body>
+</html>
