@@ -1,74 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Request Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Contact Me</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-  <a href="index.html" class="logo">DARKVENOMRSA</a>
+<h2>Send Message</h2>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="request.html">Request Project</a>
-  </div>
+<form name="contact-form" method="POST" data-netlify="true">
 
-  <button id="themeToggle">🌙</button>
-</nav>
+<input type="hidden" name="form-name" value="contact-form">
 
-<section class="request reveal">
+<input type="text" name="username" placeholder="Username" required>
 
-<h2>Request A Project</h2>
-
-<form
-class="request-form"
-name="project-request"
-method="POST"
-data-netlify="true"
-action="/thank-you.html"
->
-
-<input type="hidden" name="form-name" value="project-request">
-
-<select name="type" required>
-<option value="">Project Type</option>
-<option value="Website">Website</option>
-<option value="Tool">Tool</option>
-<option value="Fix">Bug Fix</option>
-<option value="Custom">Custom Project</option>
-</select>
-
-<input type="text" name="username" placeholder="Your Username" required>
-
-<textarea
-id="projectMessage"
-name="project"
-maxlength="500"
-placeholder="Describe what you want..."
-required></textarea>
-
-<div class="char-count">
-<span id="projectCount">0</span>/500
-</div>
+<textarea name="message" placeholder="Your message" required></textarea>
 
 <div data-netlify-recaptcha="true"></div>
 
-<button type="submit">Send Request</button>
+<button type="submit">Send</button>
 
 </form>
-
-</section>
-
-<footer>
-© 2026 DARKVENOMRSA — All rights reserved.
-</footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
