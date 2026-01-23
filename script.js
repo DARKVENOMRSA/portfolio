@@ -1,18 +1,16 @@
 const DOM = {
-  navbar: document.querySelector(".navbar"),
   progress: document.getElementById("progress-bar"),
   backTop: document.getElementById("backTop"),
   loader: document.getElementById("loader"),
   modal: document.getElementById("projectModal"),
   modalText: document.getElementById("modalContent"),
-  adminBox: document.getElementById("adminStats"),
-  visitCount: document.getElementById("visitCount")
+  reveals: document.querySelectorAll(".reveal"),
+  skills: document.querySelectorAll(".skill-fill")
 };
 
-let lastScroll = 0;
 let ticking = false;
 
-/* LOADER */
+/* Loader */
 
 window.addEventListener("load", () => {
   if (DOM.loader) {
@@ -21,11 +19,11 @@ window.addEventListener("load", () => {
   }
 });
 
-/* SCROLL ENGINE */
+/* Scroll Engine */
 
 function scrollEngine() {
 
-  const scrollY = window.pageYOffset;
+  const scrollY = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
   if (DOM.progress) {
@@ -33,8 +31,53 @@ function scrollEngine() {
   }
 
   if (DOM.backTop) {
-    DOM.backTop.style.display = scrollY > 220 ? "block" : "none";
+    DOM.backTop.style.display = scrollY > 200 ? "block" : "none";
   }
+
+  DOM.reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 60) {
+      el.classList.add("active");
+    }
+  });
+
+  DOM.skills.forEach(bar => {
+    const top = bar.getBoundingClientRect().top;
+    if (top < window.innerHeight - 60) {
+      bar.style.width = bar.dataset.width;
+    }
+  });
+
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(scrollEngine);
+    ticking = true;
+  }
+});
+
+/* Back Top */
+
+DOM.backTop.addEventListener("click", () => {
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+/* Modal */
+
+document.addEventListener("click", e => {
+
+  if (e.target.classList.contains("project-item")) {
+    DOM.modal.style.display = "flex";
+    DOM.modalText.innerText = e.target.dataset.project;
+  }
+
+  if (e.target.id === "closeModal") {
+    DOM.modal.style.display = "none";
+  }
+
+});  }
 
   if (DOM.navbar) {
 
