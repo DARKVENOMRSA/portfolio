@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact Me</title>
+<title>Request Project</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>Send Message</h2>
+<h2>Request A Project</h2>
 
-<form name="contact-form" method="POST" data-netlify="true">
+<form>
 
-<input type="hidden" name="form-name" value="contact-form">
+<input type="text" placeholder="Username" required>
 
-<input type="text" name="username" placeholder="Username" required>
+<textarea placeholder="Describe what you want built" required></textarea>
 
-<textarea name="message" placeholder="Your message" required></textarea>
-
-<div data-netlify-recaptcha="true"></div>
-
-<button type="submit">Send</button>
+<button>Submit</button>
 
 </form>
 
