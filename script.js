@@ -1,3 +1,7 @@
+/* =================================
+   DOM CACHE
+================================= */
+
 const DOM = {
   progress: document.getElementById("progress-bar"),
   backTop: document.getElementById("backTop"),
@@ -10,31 +14,124 @@ const DOM = {
 
 let ticking = false;
 
-/* Loader */
+/* =================================
+   SAFE PAGE LOADER (FIXED)
+================================= */
 
 window.addEventListener("load", () => {
-  if (DOM.loader) {
-    DOM.loader.style.opacity = "0";
-    setTimeout(() => DOM.loader.remove(), 300);
-  }
+
+  if (!DOM.loader) return;
+
+  DOM.loader.classList.add("hide");
+
+  setTimeout(() => {
+    DOM.loader.style.display = "none";
+  }, 450);
+
 });
 
-/* Scroll Engine */
+/* =================================
+   MAIN SCROLL ENGINE (OPTIMIZED)
+================================= */
 
 function scrollEngine() {
 
   const scrollY = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pageHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
 
+  /* Scroll Progress Bar */
   if (DOM.progress) {
-    DOM.progress.style.width = (scrollY / docHeight) * 100 + "%";
+    const percent = (scrollY / pageHeight) * 100;
+    DOM.progress.style.width = percent + "%";
   }
 
+  /* Back To Top Button */
   if (DOM.backTop) {
     DOM.backTop.style.display = scrollY > 200 ? "block" : "none";
   }
 
-  DOM.reveals.forEach(el => {
+  /* Reveal Animations */
+  DOM.reveals.forEach(section => {
+
+    const position = section.getBoundingClientRect().top;
+
+    if (position < window.innerHeight - 60) {
+      section.classList.add("active");
+    }
+
+  });
+
+  /* Skill Bars Animation */
+  DOM.skills.forEach(bar => {
+
+    const position = bar.getBoundingClientRect().top;
+
+    if (position < window.innerHeight - 60) {
+      bar.style.width = bar.dataset.width;
+    }
+
+  });
+
+  ticking = false;
+}
+
+/* =================================
+   SCROLL LISTENER (THROTTLED)
+================================= */
+
+window.addEventListener("scroll", () => {
+
+  if (!ticking) {
+    requestAnimationFrame(scrollEngine);
+    ticking = true;
+  }
+
+});
+
+/* =================================
+   BACK TO TOP BUTTON
+================================= */
+
+if (DOM.backTop) {
+
+  DOM.backTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+}
+
+/* =================================
+   PROJECT MODAL SYSTEM
+================================= */
+
+document.addEventListener("click", e => {
+
+  /* Open Modal */
+  if (e.target.classList.contains("project-item")) {
+
+    if (DOM.modal && DOM.modalText) {
+
+      DOM.modal.style.display = "flex";
+      DOM.modalText.innerText = e.target.dataset.project;
+
+    }
+
+  }
+
+  /* Close Modal */
+  if (e.target.id === "closeModal") {
+
+    if (DOM.modal) {
+      DOM.modal.style.display = "none";
+    }
+
+  }
+
+});  DOM.reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
     if (top < window.innerHeight - 60) {
       el.classList.add("active");
