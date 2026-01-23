@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact Me</title>
+<title>Contact</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>Send Message</h2>
+<section class="section">
+<h2>Contact Me</h2>
+
+<div class="card tech-card">
 
 <form name="contact-form" method="POST" data-netlify="true">
 
 <input type="hidden" name="form-name" value="contact-form">
 
-<input type="text" name="username" placeholder="Username" required>
+<input type="text" name="username" placeholder="Username" required><br><br>
 
-<textarea name="message" placeholder="Your message" required></textarea>
+<textarea name="message" placeholder="Your message" required></textarea><br><br>
 
-<div data-netlify-recaptcha="true"></div>
-
-<button type="submit">Send</button>
+<button type="submit">Send Message</button>
 
 </form>
+
+</div>
+</section>
 
 </body>
 </html>
