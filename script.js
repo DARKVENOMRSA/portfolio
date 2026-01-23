@@ -1,11 +1,7 @@
-/* =================================
-   DOM CACHE
-================================= */
-
 const DOM = {
+  loader: document.getElementById("loader"),
   progress: document.getElementById("progress-bar"),
   backTop: document.getElementById("backTop"),
-  loader: document.getElementById("loader"),
   modal: document.getElementById("projectModal"),
   modalText: document.getElementById("modalContent"),
   reveals: document.querySelectorAll(".reveal"),
@@ -14,25 +10,24 @@ const DOM = {
 
 let ticking = false;
 
-/* =================================
-   SAFE PAGE LOADER (FIXED)
-================================= */
+/* LOADER FAILSAFE */
 
-window.addEventListener("load", () => {
-
-  if (!DOM.loader) return;
-
-  DOM.loader.classList.add("hide");
-
-  setTimeout(() => {
-    DOM.loader.style.display = "none";
-  }, 450);
-
+document.addEventListener("DOMContentLoaded", () => {
+  if (DOM.loader) DOM.loader.classList.add("hide");
 });
 
-/* =================================
-   MAIN SCROLL ENGINE (OPTIMIZED)
-================================= */
+window.addEventListener("load", () => {
+  if (DOM.loader) DOM.loader.classList.add("hide");
+});
+
+setTimeout(() => {
+  if (DOM.loader) {
+    DOM.loader.classList.add("hide");
+    DOM.loader.style.display = "none";
+  }
+}, 2000);
+
+/* SCROLL ENGINE */
 
 function scrollEngine() {
 
@@ -40,37 +35,58 @@ function scrollEngine() {
   const pageHeight =
     document.documentElement.scrollHeight - window.innerHeight;
 
-  /* Scroll Progress Bar */
   if (DOM.progress) {
-    const percent = (scrollY / pageHeight) * 100;
-    DOM.progress.style.width = percent + "%";
+    DOM.progress.style.width = (scrollY / pageHeight) * 100 + "%";
   }
 
-  /* Back To Top Button */
   if (DOM.backTop) {
     DOM.backTop.style.display = scrollY > 200 ? "block" : "none";
   }
 
-  /* Reveal Animations */
-  DOM.reveals.forEach(section => {
-
-    const position = section.getBoundingClientRect().top;
-
-    if (position < window.innerHeight - 60) {
-      section.classList.add("active");
+  DOM.reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add("active");
     }
-
   });
 
-  /* Skill Bars Animation */
   DOM.skills.forEach(bar => {
-
-    const position = bar.getBoundingClientRect().top;
-
-    if (position < window.innerHeight - 60) {
+    if (bar.getBoundingClientRect().top < window.innerHeight - 60) {
       bar.style.width = bar.dataset.width;
     }
+  });
 
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(scrollEngine);
+    ticking = true;
+  }
+});
+
+/* BACK TOP */
+
+if (DOM.backTop) {
+  DOM.backTop.addEventListener("click", () => {
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+}
+
+/* MODAL */
+
+document.addEventListener("click", e => {
+
+  if (e.target.classList.contains("project-item")) {
+    DOM.modal.style.display = "flex";
+    DOM.modalText.innerText = e.target.dataset.project;
+  }
+
+  if (e.target.id === "closeModal") {
+    DOM.modal.style.display = "none";
+  }
+
+});
   });
 
   ticking = false;
