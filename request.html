@@ -7,17 +7,35 @@
 
 <body>
 
-<h2>Request A Project</h2>
+<section class="section">
+<h2>Request Project</h2>
+
+<div class="card tech-card">
 
 <form>
 
-<input type="text" placeholder="Username" required>
+<select required>
+<option>Select Project Type</option>
+<option>Website</option>
+<option>Bot</option>
+<option>Tool</option>
+</select><br><br>
 
-<textarea placeholder="Describe what you want built" required></textarea>
+<textarea placeholder="Describe your project" required></textarea><br><br>
 
-<button>Submit</button>
+<select required>
+<option>Priority</option>
+<option>Normal</option>
+<option>High</option>
+<option>Urgent</option>
+</select><br><br>
+
+<button>Submit Request</button>
 
 </form>
+
+</div>
+</section>
 
 </body>
 </html>
