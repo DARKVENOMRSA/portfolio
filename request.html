@@ -1,40 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Request Project</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Project | DarkVenom</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-<section class="section">
-<h2>Request Project</h2>
+<nav class="navbar">
+  <h1 class="logo">DarkVenom</h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="request.html">Request</a>
+  </div>
+</nav>
 
-<div class="card tech-card">
+<section class="section center">
+  <h2 class="section-title">Request a Project</h2>
 
-<form>
-
-<select required>
-<option>Select Project Type</option>
-<option>Website</option>
-<option>Bot</option>
-<option>Tool</option>
-</select><br><br>
-
-<textarea placeholder="Describe your project" required></textarea><br><br>
-
-<select required>
-<option>Priority</option>
-<option>Normal</option>
-<option>High</option>
-<option>Urgent</option>
-</select><br><br>
-
-<button>Submit Request</button>
-
-</form>
-
-</div>
+  <form class="card form">
+    <input type="text" placeholder="Your nickname" required/>
+    <textarea placeholder="What do you want me to build?" required></textarea>
+    <button type="submit" class="btn">Send Request</button>
+  </form>
 </section>
 
 </body>
